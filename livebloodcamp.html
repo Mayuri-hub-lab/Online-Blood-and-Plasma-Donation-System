@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Bloodcamp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  align-items: right;
+  margin-top: 50px;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid green;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+  border-right:1px dotted;
+  border-bottom:1px dotted;
+}
+
+.td{
+border-right:1px dotted;
+border-bottom:1px dotted;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header{
+  background-color: #F72300;
+
+}
+
+header.th{
+  border-right:1px dotted;
+border-bottom:1px dotted;
+}
+
+#myTable tr.header:hover{
+  background-color: #F72300;
+}
+
+#myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+</style>
+</head>
+<body> 
+
+
+<table style="margin-top: 15px;"> 
+<tr> 
+<th style="color: green;font-size: 35px;"> Live Bloodcamp  </th>
+<th> 
+  <div class="box">
+
+    <input type="text" class="fa fa-search" aria-hidden="true"  id="myInput" onkeyup="myFunction()" style="margin-top: 0px;margin-left: 700px; " placeholder="Search for address">
+  </div>
+</th>
+</tr>
+  </table>
+
+
+<br>  
+
+
+<table id="myTable">
+ <tr class="header">
+    <th>SR.NO</th>
+    <th>DATE</th>
+    <th>TIME</th>
+    <th >CAMP NAME</th>
+    <th >ADDRESS</th>
+    <th >CONTACT</th>
+    
+  </tr>
+
+<tr>
+<td>1</td>
+<td>22-July-2021</td>
+<td>09:00-13:00</td>
+<td>Prahar Sanghatana Patoda</td>
+<td>Prahar Sanghatana and Shivjayanti Ustsav Samiti Patoda,Rural Hospital, Patoda, Patoda, Nashik</td>
+<td>9604614096</td> 
+</tr>
+<tr>
+<td>2</td>
+<td>22-July-2021</td>
+<td>11:00-15:00</td>
+<td>Blood Donation Camp Prahar Janshakti Paksh </td>
+<td>Sant Gajanan Maharaj Temple,Weekly Market, Samudrapur, Wardha</td>
+<td>8329600416</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22-July-2021</td>
+<td>10:00-15:00</td>
+<td>Life Savers Trust</td>
+<td>Trust  Life Savers Trust ,Loharu, LOHARU,  Bhiwani</td>
+<td>8814904501</td>
+</tr>
+<tr>
+<td>4</td>
+<td>22-July-2021</td>
+<td>09:00-14:00</td>
+<td>Jeevan Bindu - Cuttack</td>
+<td>Nalini Mandap,Bidanashi,  Cuttack</td>
+<td>9437227149</td>
+</tr>
+<td>5</td>
+<td>22-July-2021</td>
+<td>10:00-14:00</td>
+<td>Htc</td>
+<td>HTC,NANUTA SRE,  Saharanpur</td>
+<td>7926600101</td>
+</tr>
+<tr>
+<td>6</td>
+<td>22-July-2021</td>
+<td>18:00-21:00</td>
+<td>Anthrow Van Evening</td>
+<td>Anthrow Van Evening,Sola Road, Ahmedabad</td>
+<td>07926600101</td>
+</tr>
+<tr>
+<td>7</td>
+<td>22-July-2021</td>
+<td>10:00-15:00</td>
+<td>Yuva Rastriya Janta Dal</td>
+<td>Yuva Rastriya Janta Dal,Kaler Ward No-29 Chaprdah Road , Gaya</td>
+<td>7633913529</td>
+</tr>
+<td>8</td>
+<td>22-July-2021</td>
+<td>11:00-15:00</td>
+<td>Blood Donation Camp Prahar Janshakti Paksh </td>
+<td>Sant Gajanan Maharaj Temple,Weekly Market, Samudrapur, Wardha</td>
+<td>8329600416</td>
+</tr>
+<tr>
+<td>9</td>
+<td>22-July-2021</td>
+<td>18:00-21:00</td>
+<td>Red Van Evening</td>
+<td> Red Van Evening,Bopal, Ahmedabad</td>
+<td>07926600101</td>
+</tr>
+<td>10</td>
+<td>22-July-2021</td>
+<td>11:00-15:00</td>
+<td>BALURGHAT HIGH SCHOOL</td>
+<td>Balurghat, Dakshin Dinajpur,West Bengal</td>
+<td>7584860082</td>
+</tr>
+
+
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<title>
+search box</title>
+<head> nearest donor</head>
+<body>
+<h2 style="text-align:center;text-ttransformation:uppercase;">Search</h2>
+<input type="text" id="myInput" placeholder="search address"  onkeyup="searchaddress()">
+<ul id="myUL">
+<li><a href="#">mahadulla</a></li>
+<li><a href="#">koradi</a></li>
+<li><a href="#">nandar</a></li>
+<li><a href="#">bardir</a></li>
+</ul>
+<script>
+const searchaddress=() => {
+    let filters = document.getElementById('myInput').value.toUpperCase();
+    
+    let ul= document.getElementById('myUL');
+    let li=ul.getElementsByTagName('li');
+    for(var i=0; i<li.length; i++) {
+        let a=li[i].getElementsByTagName('a')[0];
+        let textValue=a.textContent || a.innerHTML;
+        if(textValue.toUpperCase().indexOf(filters) > -1){
+            li[i].style.display="";
+        }else{
+             li[i].style.display="none";
+        }
+    }
+}
+
+</script>
+<body>
+</html>
